@@ -1,0 +1,7 @@
+{
+  "name": "nihongo-dojo",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "react"
+}
