@@ -1,11 +1,14 @@
 {
   "compilerOptions": {
+    "types": ["@emotion/react/types/css-prop","@types/jest"],
     "target": "es5",
     "lib": [
       "dom",
       "dom.iterable",
       "esnext"
     ],
+    "jsx": "react-jsx",
+    "jsxImportSource": "@emotion/react",
     "allowJs": true,
     "skipLibCheck": true,
     "esModuleInterop": true,
@@ -18,9 +21,10 @@
     "resolveJsonModule": true,
     "isolatedModules": true,
     "noEmit": true,
-    "jsx": "react-jsx"
+
   },
   "include": [
     "src"
-  ]
+  ],
+  "exclude": ["**/tests/*.test.ts"]
 }
