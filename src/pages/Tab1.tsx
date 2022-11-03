@@ -7,6 +7,8 @@ import {
 } from '@ionic/react';
 import ExploreContainer from '../components/ExploreContainer';
 import { SampleComponent } from '../components/SampleComponent';
+import { Button } from '../components/atoms/Button';
+import { Navigation } from '../components/molecules/Navigation';
 import './Tab1.css';
 
 const Tab1: React.FC = () => {
@@ -15,7 +17,9 @@ const Tab1: React.FC = () => {
       <IonHeader>
         <IonToolbar>
           <IonTitle>Tab 1</IonTitle>
+          <Button src="/" label="CONTINUE" type="alert" />
           <SampleComponent />
+          <Navigation current="Categories" />
         </IonToolbar>
       </IonHeader>
       <IonContent fullscreen>

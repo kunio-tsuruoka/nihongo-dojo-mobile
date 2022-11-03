@@ -38,18 +38,28 @@ import { ThemeProvider, Global, css } from '@emotion/react';
 setupIonicReact();
 
 //仮で入れてる
-const theme = {
+export const theme = {
   color: {
-    primary0: '#184A9A',
-    primary1: '#2D4F83',
-    primary2: '#F2F7FF',
+    Green_key: '#12B886',
+    Green_Fonts: '#099268',
+    bgGreen_01: '#E6FCF5',
+    bgGreen_02: '#DCECE7',
+    Yellow: '#F59F00',
+    Red_font: '#E03131',
+    Red_bg: '#FFC9C9',
+    Black_font_basic: '#343A40',
+    white: '#FFFFFF',
+    icon_deactive: '#979C9E',
+    primary0: '#12B886',
+    primary1: '#099268',
+    primary2: '#E6FCF5',
     primary3: '#365491',
     primary4: '#EBF3FF',
     primary5: '#7CA4E3',
     primary6: '#BAD6FF',
     primary7: '#0041B7',
     primary8: '#ECF3FE',
-    secondary0: '#C05037',
+    secondary0: '#E03131',
     secondary1: '#CF472C',
     secondary2: '#FDDCD3',
     secondary3: '#FFFBFA',
