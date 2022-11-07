@@ -6,18 +6,18 @@ import {
   IonToolbar,
 } from '@ionic/react';
 import ExploreContainer from '../components/ExploreContainer';
-import { SampleComponent } from '../components/SampleComponent';
 import { Button } from '../components/atoms/Button';
 import { Navigation } from '../components/molecules/Navigation';
 import './Tab1.css';
 
-const Tab1: React.FC = () => {
+const TestComponents: React.FC = () => {
   return (
     <IonPage>
       <IonHeader>
         <IonToolbar>
           <IonTitle>Tab 1</IonTitle>
-          <SampleComponent />
+          <Button src="/" label="CONTINUE" type="alert" />
+          <Navigation current="Categories" />
         </IonToolbar>
       </IonHeader>
       <IonContent fullscreen>
@@ -32,4 +32,4 @@ const Tab1: React.FC = () => {
   );
 };
 
-export default Tab1;
+export default TestComponents;

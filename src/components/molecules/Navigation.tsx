@@ -32,11 +32,8 @@ export const Navigation: React.FC<IProps> = (props) => {
   ];
 
   const cssWrapper = css`
-    position: fixed;
-    bottom: 0;
-    left: 0;
     width: 100%;
-    background: rgba(${theme.color.icon_deactive}, 0.5);
+    background: rgba(${theme.color.text2}, 0.5);
     backdrop-filter: blur(4px);
   `;
   const cssList = css`
@@ -49,13 +46,13 @@ export const Navigation: React.FC<IProps> = (props) => {
     li {
       width: 100%;
       &.current * {
-        color: ${theme.color.Green_Fonts} !important;
+        color: ${theme.color.primary1} !important;
       }
     }
   `;
   const cssItem = css`
     text-decoration: none;
-    color: ${theme.color.icon_deactive};
+    color: ${theme.color.text2};
     display: flex;
     justify-content: center;
     flex-direction: column;

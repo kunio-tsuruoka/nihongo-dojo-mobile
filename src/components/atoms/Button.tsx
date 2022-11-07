@@ -34,15 +34,15 @@ export const Button: React.FC<IProps> = (props) => {
     text-decoration: none;
     ${type === 'success' &&
     `
-      background-color: ${theme.color.Green_key};
+      background-color: ${theme.color.primary0};
     `}
     ${type === 'successSub' &&
     `
-      background-color: ${theme.color.Green_Fonts};
+      background-color: ${theme.color.primary1};
     `}
     ${type === 'alert' &&
     `
-      background-color: ${theme.color.Red_font};
+      background-color: ${theme.color.secondary0};
     `}
     ${type === 'alertSub' &&
     `

@@ -3,16 +3,6 @@ import '@emotion/react';
 declare module '@emotion/react' {
   export interface Theme {
     color: {
-      Green_key: string;
-      Green_Fonts: string;
-      bgGreen_01: string;
-      bgGreen_02: string;
-      Yellow: string;
-      Red_font: string;
-      Red_bg: string;
-      Black_font_basic: string;
-      white: string;
-      icon_deactive: string;
       primary0: string;
       primary1: string;
       primary2: string;
