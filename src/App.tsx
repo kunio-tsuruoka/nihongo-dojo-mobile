@@ -38,6 +38,8 @@ import '@ionic/react/css/display.css';
 import './theme/variables.css';
 import { ThemeProvider, Global, css } from '@emotion/react';
 setupIonicReact();
+// TODO：グローバルなcss入れたい
+import './index.css';
 
 //仮で入れてる
 export const theme = {

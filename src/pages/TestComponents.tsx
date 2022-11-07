@@ -1,3 +1,5 @@
+/** @jsxImportSource @emotion/react */
+import { css, useTheme } from '@emotion/react';
 import {
   IonContent,
   IonHeader,
@@ -8,25 +10,26 @@ import {
 import ExploreContainer from '../components/ExploreContainer';
 import { Button } from '../components/atoms/Button';
 import { Navigation } from '../components/molecules/Navigation';
+import { DialogueList } from '../components/molecules/DialogueList';
 import './Tab1.css';
 
 const TestComponents: React.FC = () => {
+  const cssWrapper = css`
+    background-color: #ddd;
+  `;
   return (
     <IonPage>
       <IonHeader>
         <IonToolbar>
-          <IonTitle>Tab 1</IonTitle>
-          <Button src="/" label="CONTINUE" type="alert" />
-          <Navigation current="Categories" />
+          <IonTitle>（開発用）コンポーネント一覧</IonTitle>
         </IonToolbar>
       </IonHeader>
       <IonContent fullscreen>
-        <IonHeader collapse="condense">
-          <IonToolbar>
-            <IonTitle size="large">Tab 1</IonTitle>
-          </IonToolbar>
-        </IonHeader>
-        <ExploreContainer name="Tab 1 page" />
+        <div css={cssWrapper}>
+          <Button src="/" label="CONTINUE" type="alert" />
+          <Navigation current="Categories" />
+          <DialogueList />
+        </div>
       </IonContent>
     </IonPage>
   );
