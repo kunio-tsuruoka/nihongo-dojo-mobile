@@ -66,7 +66,7 @@ export const theme = {
     text0: '#333333',
     text1: '#343A40',
     text2: '#979C9E',
-    text3: '#C9C9C9',
+    text3: '#666666',
     text4: '#FFFFFF',
     bg0: '#E6FCF5',
     bg1: '#DCECE7',

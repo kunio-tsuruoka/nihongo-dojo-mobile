@@ -11,6 +11,7 @@ import ExploreContainer from '../components/ExploreContainer';
 import { Button } from '../components/atoms/Button';
 import { Navigation } from '../components/molecules/Navigation';
 import { DialogueList } from '../components/molecules/DialogueList';
+import { PhraseList } from '../components/molecules/PhraseList';
 import './Tab1.css';
 
 const TestComponents: React.FC = () => {
@@ -29,6 +30,7 @@ const TestComponents: React.FC = () => {
           <Button src="/" label="CONTINUE" type="alert" />
           <Navigation current="Categories" />
           <DialogueList />
+          <PhraseList />
         </div>
       </IonContent>
     </IonPage>

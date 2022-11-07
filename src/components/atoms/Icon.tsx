@@ -10,8 +10,8 @@ interface IProps {
 export const Icon: React.FC<IProps> = (props) => {
   const theme = useTheme();
   const icon = (cssWidth?: number, cssHeight?: number) => css`
-    ${cssWidth ? `width: ${cssWidth}px` : `20px`};
-    ${cssHeight ? `height: ${cssHeight}px` : `20px`};
+    ${cssWidth ? `width: ${cssWidth}px` : `24px`};
+    ${cssHeight ? `height: ${cssHeight}px` : `24px`};
     display: inline-block;
     img {
       width: 100%;
