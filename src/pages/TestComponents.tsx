@@ -12,6 +12,7 @@ import { Button } from '../components/atoms/Button';
 import { Navigation } from '../components/molecules/Navigation';
 import { DialogueList } from '../components/molecules/DialogueList';
 import { PhraseList } from '../components/molecules/PhraseList';
+import { ChoiseList } from '../components/molecules/ChoiseList';
 import './Tab1.css';
 
 const TestComponents: React.FC = () => {
@@ -31,6 +32,7 @@ const TestComponents: React.FC = () => {
           <Navigation current="Categories" />
           <DialogueList />
           <PhraseList />
+          <ChoiseList />
         </div>
       </IonContent>
     </IonPage>
