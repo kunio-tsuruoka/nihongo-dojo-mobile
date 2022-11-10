@@ -36,6 +36,9 @@ export const ChoiseList: React.FC = () => {
 
     li {
       margin-bottom: 16px;
+      &:last-child {
+        margin-bottom: 0;
+      }
     }
   `;
   const cssInput = css`

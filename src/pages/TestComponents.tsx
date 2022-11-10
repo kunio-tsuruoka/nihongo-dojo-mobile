@@ -13,6 +13,7 @@ import { Navigation } from '../components/molecules/Navigation';
 import { DialogueList } from '../components/molecules/DialogueList';
 import { PhraseList } from '../components/molecules/PhraseList';
 import { ChoiseList } from '../components/molecules/ChoiseList';
+import { Modal } from '../components/organisms/Modal';
 import './Tab1.css';
 
 const TestComponents: React.FC = () => {
@@ -33,6 +34,17 @@ const TestComponents: React.FC = () => {
           <DialogueList />
           <PhraseList />
           <ChoiseList />
+          <Button
+            src={null}
+            label="MODAL OPEN"
+            type="success"
+            id="example-modal-1"
+            tag="button"
+          />
+          <Modal trigger="example-modal-1" haveCloseButton={true} width="90vw">
+            <p>Modal Inner</p>
+            <Button src="/" label="CONTINUE" type="successSub" />
+          </Modal>
         </div>
       </IonContent>
     </IonPage>

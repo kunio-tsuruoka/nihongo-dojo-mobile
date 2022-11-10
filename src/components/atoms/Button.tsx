@@ -3,14 +3,17 @@ import { css, useTheme } from '@emotion/react';
 import { MouseEventHandler, useCallback } from 'react';
 
 interface IProps {
-  src: string;
+  src: string | null;
   label: string;
   isCenter?: boolean;
   type: 'success' | 'successSub' | 'alert' | 'alertSub' | 'primary';
   onClickHandler?: () => void;
+  id?: string;
+  tag?: React.ElementType;
 }
 
 export const Button: React.FC<IProps> = (props) => {
+  const CostomTag = props.tag ? props.tag : 'a';
   const theme = useTheme();
   const handleClick: MouseEventHandler<HTMLAnchorElement> = useCallback(
     (event) => {
@@ -56,12 +59,13 @@ export const Button: React.FC<IProps> = (props) => {
   `;
 
   return (
-    <a
+    <CostomTag
       css={btn(props.type, props.isCenter)}
       onClick={handleClick}
-      href={props.src}
+      id={props.id ? props.id : ''}
+      {...(props.src && { href: props.src })}
     >
       {props.label}
-    </a>
+    </CostomTag>
   );
 };
