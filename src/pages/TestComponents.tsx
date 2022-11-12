@@ -9,10 +9,12 @@ import {
 } from '@ionic/react';
 import ExploreContainer from '../components/ExploreContainer';
 import { Button } from '../components/atoms/Button';
+import { PlayButton } from '../components/atoms/PlayButton';
 import { Navigation } from '../components/molecules/Navigation';
 import { DialogueList } from '../components/molecules/DialogueList';
 import { PhraseList } from '../components/molecules/PhraseList';
 import { ChoiseList } from '../components/molecules/ChoiseList';
+import { CategoryListTitle } from '../components/molecules/CategoryListTitle';
 import { Modal } from '../components/organisms/Modal';
 import './Tab1.css';
 
@@ -30,6 +32,7 @@ const TestComponents: React.FC = () => {
       <IonContent fullscreen>
         <div css={cssWrapper}>
           <Button src="/" label="CONTINUE" type="alert" />
+          <PlayButton type="play" />
           <Navigation current="Categories" />
           <DialogueList />
           <PhraseList />
@@ -45,6 +48,12 @@ const TestComponents: React.FC = () => {
             <p>Modal Inner</p>
             <Button src="/" label="CONTINUE" type="successSub" />
           </Modal>
+          <CategoryListTitle
+            title="long title is here   title is here title is here"
+            full={9}
+            done={3}
+            thumb="http://placehold.jp/150x150.png"
+          />
         </div>
       </IonContent>
     </IonPage>

@@ -6,11 +6,12 @@ import { ImageIcon } from '../atoms/ImageIcon';
 interface IProps {
   text: string;
   icon: string;
+  isWrong?: boolean;
 }
 
 export const ChoiseItem: React.FC<IProps> = (props) => {
   const theme = useTheme();
-  const cssWrapper = css`
+  const cssWrapper = (iwWrong: boolean | undefined) => css`
     display: flex;
     background-color: #fff;
     border-radius: 10px;
@@ -18,6 +19,11 @@ export const ChoiseItem: React.FC<IProps> = (props) => {
     border: 2px solid #fff;
     width: 100%;
     padding: 9px 12px;
+    ${iwWrong &&
+    `
+      border-color: ${theme.color.secondary0};
+      background-color: ${theme.color.bg2};
+    `}
   `;
   const cssIcon = css`
     margin-right: 8px;
@@ -35,7 +41,7 @@ export const ChoiseItem: React.FC<IProps> = (props) => {
     }
   `;
   return (
-    <div css={cssWrapper} className={'choiseItem__wrapper'}>
+    <div css={cssWrapper(props.isWrong)} className={'choiseItem__wrapper'}>
       <div css={cssIcon}>
         <ImageIcon name={props.icon} width={32} height={32} />
       </div>

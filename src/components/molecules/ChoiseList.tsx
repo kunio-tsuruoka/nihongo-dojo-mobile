@@ -10,6 +10,7 @@ export const ChoiseList: React.FC = () => {
       text: 'Why are you angry?',
       icon: 'shuriken',
       id: 'choise1',
+      isWrong: true,
     },
     {
       text: 'Why are you angry?Why are you angry?',
@@ -60,7 +61,11 @@ export const ChoiseList: React.FC = () => {
           <li key={index}>
             <input type="radio" name="choise" id={item.id} css={cssInput} />
             <label htmlFor={item.id}>
-              <ChoiseItem text={item.text} icon={item.icon} />
+              <ChoiseItem
+                text={item.text}
+                icon={item.icon}
+                isWrong={item.isWrong}
+              />
             </label>
           </li>
         ))}
