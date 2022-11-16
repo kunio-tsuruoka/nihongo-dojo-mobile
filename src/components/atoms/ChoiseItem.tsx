@@ -11,7 +11,7 @@ interface IProps {
 
 export const ChoiseItem: React.FC<IProps> = (props) => {
   const theme = useTheme();
-  const cssWrapper = (iwWrong: boolean | undefined) => css`
+  const cssWrapper = (isWrong: boolean | undefined) => css`
     display: flex;
     background-color: #fff;
     border-radius: 10px;
@@ -19,7 +19,7 @@ export const ChoiseItem: React.FC<IProps> = (props) => {
     border: 2px solid #fff;
     width: 100%;
     padding: 9px 12px;
-    ${iwWrong &&
+    ${isWrong &&
     `
       border-color: ${theme.color.secondary0};
       background-color: ${theme.color.bg2};

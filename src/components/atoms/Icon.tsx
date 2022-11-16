@@ -14,6 +14,7 @@ export const Icon: React.FC<IProps> = (props) => {
     ${cssWidth ? `width: ${cssWidth}px` : `24px`};
     ${cssHeight ? `height: ${cssHeight}px` : `24px`};
     display: inline-block;
+    vertical-align: bottom;
     img {
       width: 100%;
       height: 100%;

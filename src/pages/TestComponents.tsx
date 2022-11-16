@@ -10,11 +10,16 @@ import {
 import ExploreContainer from '../components/ExploreContainer';
 import { Button } from '../components/atoms/Button';
 import { PlayButton } from '../components/atoms/PlayButton';
+import { QuizPhrase } from '../components/atoms/QuizPhrase';
+import { RecordTitle } from '../components/atoms/RecordTitle';
+import { TipsMessage } from '../components/atoms/TipsMessage';
 import { Navigation } from '../components/molecules/Navigation';
 import { DialogueList } from '../components/molecules/DialogueList';
 import { PhraseList } from '../components/molecules/PhraseList';
 import { ChoiseList } from '../components/molecules/ChoiseList';
+import { RecordArea } from '../components/molecules/RecordArea';
 import { CategoryListTitle } from '../components/molecules/CategoryListTitle';
+import { ChoiseConfirmLayer } from '../components/molecules/ChoiseConfirmLayer';
 import { Modal } from '../components/organisms/Modal';
 import './Tab1.css';
 
@@ -54,6 +59,15 @@ const TestComponents: React.FC = () => {
             done={3}
             thumb="http://placehold.jp/150x150.png"
           />
+          <QuizPhrase text="出題テキスト出題テキスト出題テキスト。出題テキスト出題テキスト出題テキスト出題テキスト出題テキスト。" />
+          <ChoiseConfirmLayer
+            correctText="This is a pen."
+            type="miss"
+            next="/"
+          />
+          <TipsMessage text="Tap the meaning and defeat the enemy" />
+          <RecordTitle text="録音テーマテキスト録音テーマテキスト録音テーマテキスト録音テーマテキスト" />
+          <RecordArea />
         </div>
       </IonContent>
     </IonPage>
