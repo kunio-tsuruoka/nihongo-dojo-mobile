@@ -6,7 +6,13 @@ interface IProps {
   src: string | null;
   label: string;
   isCenter?: boolean;
-  type: 'success' | 'successSub' | 'alert' | 'alertSub' | 'primary';
+  type:
+    | 'success'
+    | 'successSub'
+    | 'alert'
+    | 'alertSub'
+    | 'primary'
+    | 'transparent';
   onClickHandler?: () => void;
   id?: string;
   tag?: React.ElementType;
@@ -50,6 +56,11 @@ export const Button: React.FC<IProps> = (props) => {
     ${type === 'alertSub' &&
     `
       background-color: #C17A7A;
+    `}
+    ${type === 'transparent' &&
+    `
+      background-color: transparent;
+      color: ${theme.color.text1};
     `}
     ${(isCenter == true || isCenter == null) &&
     `

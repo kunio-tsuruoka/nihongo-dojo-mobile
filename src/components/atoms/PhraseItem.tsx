@@ -45,7 +45,8 @@ export const PhraseItem: React.FC<IProps> = (props) => {
     margin: 0;
     font-size: 14px;
     line-height: 1.5;
-    font-weight: bold;
+    font-weight: normal;
+    letter-spacing: 0.2em;
   `;
   const cssTextJa = css`
     color: ${theme.color.text1};

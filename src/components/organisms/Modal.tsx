@@ -32,6 +32,10 @@ export const Modal: React.FC<IProps> = (props) => {
   const cssContainer = css``;
   const cssCloseButton = css`
     background-color: transparent;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
     span {
       position: absolute;
       display: block;

@@ -5,6 +5,8 @@ interface IProps {
   name: string;
   width?: number;
   height?: number;
+  extension?: string;
+  alt?: string;
 }
 
 export const ImageIcon: React.FC<IProps> = (props) => {
@@ -19,9 +21,13 @@ export const ImageIcon: React.FC<IProps> = (props) => {
       object-fit: contain;
     }
   `;
+  const extention = props.extension ? props.extension : 'png';
   return (
     <span css={icon(props.width, props.height)}>
-      <img src={`/assets/icon/staticicon/img/${props.name}.png`} alt="" />
+      <img
+        src={`/assets/icon/staticicon/img/${props.name}.${extention}`}
+        alt={props.alt}
+      />
     </span>
   );
 };
