@@ -1,5 +1,6 @@
 /** @jsxImportSource @emotion/react */
 import { css, useTheme } from '@emotion/react';
+import { Icon } from '../atoms/Icon';
 
 interface IProps {
   current: 'Categories' | 'Review' | 'Me' | 'Setting' | undefined;
@@ -12,22 +13,22 @@ export const Navigation: React.FC<IProps> = (props) => {
     {
       href: '/category',
       title: 'Categories',
-      icon: '',
+      icon: 'folder',
     },
     {
       href: '/review',
       title: 'Review',
-      icon: '',
+      icon: 'review',
     },
     {
       href: '/me',
       title: 'Me',
-      icon: '',
+      icon: 'user',
     },
     {
       href: '/setting',
       title: 'Setting',
-      icon: '',
+      icon: 'setting',
     },
   ];
 
@@ -60,6 +61,9 @@ export const Navigation: React.FC<IProps> = (props) => {
     font-size: 10px;
     padding: 10px 0 22px;
     width: 100%;
+    .icon {
+      margin-bottom: 4px;
+    }
   `;
   return (
     <nav css={cssWrapper}>
@@ -69,9 +73,11 @@ export const Navigation: React.FC<IProps> = (props) => {
             className={item.title === props.current ? 'current' : ''}
             key={index}
           >
-            {/* TODO：Linkコンポーネントに変える？ */}
+            {/* TODO：currentのアイコン用意してもらう */}
             <a href={item.href} css={cssItem}>
-              <span className="icon">アイコン</span>
+              <span className="icon">
+                <Icon name={item.icon} width={24} height={24} />
+              </span>
               <span className="title">{item.title}</span>
             </a>
           </li>

@@ -3,6 +3,7 @@ import { css, useTheme } from '@emotion/react';
 
 interface IProps {
   name: string;
+  className?: string;
   alt?: string;
   width?: number;
   height?: number;
@@ -22,7 +23,7 @@ export const Icon: React.FC<IProps> = (props) => {
     }
   `;
   return (
-    <span css={icon(props.width, props.height)}>
+    <span css={icon(props.width, props.height)} className={props.className}>
       <img
         src={`/assets/icon/staticicon/svg/${props.name}.svg`}
         alt={`${props.alt}`}

@@ -24,6 +24,8 @@ import { RecordArea } from '../components/molecules/RecordArea';
 import { CategoryListTitle } from '../components/molecules/CategoryListTitle';
 import { ChoiseConfirmLayer } from '../components/molecules/ChoiseConfirmLayer';
 import { NotificationModalInner } from '../components/molecules/NotificationModalInner';
+import { HeaderNavigation } from '../components/molecules/HeaderNavigation';
+import { ButtleIllust } from '../components/molecules/ButtleIllust';
 import { Modal } from '../components/organisms/Modal';
 import './Tab1.css';
 
@@ -40,6 +42,13 @@ const TestComponents: React.FC = () => {
       </IonHeader>
       <IonContent fullscreen>
         <div css={cssWrapper}>
+          <HeaderNavigation
+            type="close"
+            src="/"
+            background="green"
+            title="TITLE"
+            arrowWhite={false}
+          />
           <Button src="/" label="CONTINUE" type="alert" />
           <PlayButton type="play" />
           <CategoryIcon
@@ -106,6 +115,8 @@ const TestComponents: React.FC = () => {
               </p>
             </section>
           </DialogueTextArea>
+          <ButtleIllust isCorrect={false} isAchivement={false} />
+          <ButtleIllust isCorrect={true} isAchivement={false} />
           <ChoiseList />
           <Button
             src={null}
