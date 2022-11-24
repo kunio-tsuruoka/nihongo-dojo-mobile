@@ -47,7 +47,7 @@ export const theme = {
     primary0: '#12B886',
     primary1: '#099268',
     primary2: '#E6FCF5',
-    primary3: '#365491',
+    primary3: '#AE3EC9',
     primary4: '#EBF3FF',
     primary5: '#7CA4E3',
     primary6: '#BAD6FF',

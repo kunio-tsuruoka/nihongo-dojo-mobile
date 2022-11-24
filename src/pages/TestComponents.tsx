@@ -26,6 +26,7 @@ import { ChoiseConfirmLayer } from '../components/molecules/ChoiseConfirmLayer';
 import { NotificationModalInner } from '../components/molecules/NotificationModalInner';
 import { HeaderNavigation } from '../components/molecules/HeaderNavigation';
 import { ButtleIllust } from '../components/molecules/ButtleIllust';
+import { IntonationGraph } from '../components/molecules/IntonationGraph';
 import { Modal } from '../components/organisms/Modal';
 import './Tab1.css';
 
@@ -143,6 +144,7 @@ const TestComponents: React.FC = () => {
           <TipsMessage text="Tap the meaning and defeat the enemy" />
           <RecordTitle text="録音テーマテキスト録音テーマテキスト録音テーマテキスト録音テーマテキスト" />
           <RecordArea />
+          <IntonationGraph />
         </div>
       </IonContent>
     </IonPage>
