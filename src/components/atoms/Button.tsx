@@ -57,6 +57,11 @@ export const Button: React.FC<IProps> = (props) => {
     `
       background-color: #C17A7A;
     `}
+    ${type === 'primary' &&
+    `
+      background-color: #FFF;
+      color: ${theme.color.primary0};
+    `}
     ${type === 'transparent' &&
     `
       background-color: transparent;
