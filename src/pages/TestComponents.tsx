@@ -26,7 +26,8 @@ import { ChoiseConfirmLayer } from '../components/molecules/ChoiseConfirmLayer';
 import { NotificationModalInner } from '../components/molecules/NotificationModalInner';
 import { HeaderNavigation } from '../components/molecules/HeaderNavigation';
 import { ButtleIllust } from '../components/molecules/ButtleIllust';
-import { IntonationGraph } from '../components/molecules/IntonationGraph';
+import { IntonationResult } from '../components/molecules/IntonationResult';
+import { WeeklyRecord } from '../components/molecules/WeeklyRecord';
 import { Modal } from '../components/organisms/Modal';
 import './Tab1.css';
 
@@ -144,7 +145,8 @@ const TestComponents: React.FC = () => {
           <TipsMessage text="Tap the meaning and defeat the enemy" />
           <RecordTitle text="録音テーマテキスト録音テーマテキスト録音テーマテキスト録音テーマテキスト" />
           <RecordArea />
-          <IntonationGraph />
+          <IntonationResult level={1} levelText="Begginer" point={30} />
+          <WeeklyRecord currentNumber={753} goalOfWeek={100} />
         </div>
       </IonContent>
     </IonPage>

@@ -1,6 +1,6 @@
 /** @jsxImportSource @emotion/react */
 import { css, useTheme } from '@emotion/react';
-import { Line } from 'react-chartjs-2';
+import { Bar } from 'react-chartjs-2';
 import Chart from 'chart.js/auto';
 import { CategoryScale } from 'chart.js';
 import { NONAME } from 'dns';
@@ -10,7 +10,7 @@ interface IProps {
   text?: string;
 }
 
-export const IntonationGraph: React.FC<IProps> = (props) => {
+export const RecordGraph: React.FC<IProps> = (props) => {
   const theme = useTheme();
   const cssText = css`
     color: ${theme.color.primary0};
@@ -18,19 +18,22 @@ export const IntonationGraph: React.FC<IProps> = (props) => {
   const cssWrapper = css`
     /*  */
   `;
-  const labels = ['a', 'na', 'ta', 'no', 'ha', 'tsu', 'o', 'n'];
+  const labels = ['M', 'T', 'W', 'T', 'F', 'S', 'S'];
   const graphData = {
     labels: labels,
     datasets: [
       {
         label: 'model',
-        data: [65, 59, 60, 81, 56, 55, 60, 70],
-        borderColor: 'rgb(18, 184, 134)',
-      },
-      {
-        label: 'you',
-        data: [60, 55, 57, 61, 75, 50, 70, 80],
-        borderColor: 'rgb(174, 62, 201)',
+        data: [3, 10, 30, 100, 56, 55, 60],
+        backgroundColor: [
+          'rgb(245, 159, 0)',
+          'rgb(245, 159, 0)',
+          'rgb(245, 159, 0)',
+          'rgb(245, 159, 0)',
+          'rgb(245, 159, 0)',
+          'rgb(245, 159, 0)',
+          'rgb(245, 159, 0)',
+        ],
       },
     ],
   };
@@ -50,14 +53,14 @@ export const IntonationGraph: React.FC<IProps> = (props) => {
         },
       },
       x: {
-        position: 'top',
+        position: 'bottom',
       },
     },
   };
   return (
     <div css={cssWrapper}>
-      <Line
-        height={115}
+      <Bar
+        height={202}
         width={300}
         data={graphData}
         // x.positionの型エラー回避のため
