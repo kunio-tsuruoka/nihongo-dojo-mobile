@@ -29,6 +29,7 @@ export const CategoryIcon: React.FC<IProps> = (props) => {
     margin-left: auto;
     margin-right: auto;
     background-color: #fff;
+    margin-top: 8px;
   `;
   const cssIcon = css`
     position: relative;
