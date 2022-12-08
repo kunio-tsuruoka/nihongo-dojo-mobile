@@ -8,6 +8,7 @@ Chart.register(CategoryScale);
 
 interface IProps {
   text?: string;
+  dayOfWeek: number; // Mon:1〜Sun:7
 }
 
 export const RecordGraph: React.FC<IProps> = (props) => {
@@ -24,7 +25,7 @@ export const RecordGraph: React.FC<IProps> = (props) => {
     datasets: [
       {
         label: 'model',
-        data: [3, 10, 30, 100, 56, 55, 60],
+        data: [3, 10, 30, 100, 250, 55, 60],
         backgroundColor: [
           'rgb(245, 159, 0)',
           'rgb(245, 159, 0)',
@@ -37,6 +38,14 @@ export const RecordGraph: React.FC<IProps> = (props) => {
       },
     ],
   };
+  const roundUpMultiple = (value: number, multiple: number) => {
+    return Math.ceil(value / multiple) * multiple;
+  };
+  // scales y stepSize
+  const quarterOfMaxData = roundUpMultiple(
+    Math.max(...graphData.datasets[0].data) / 4,
+    50,
+  );
 
   const options = {
     responsive: true,
@@ -44,19 +53,45 @@ export const RecordGraph: React.FC<IProps> = (props) => {
       legend: {
         display: false,
       },
+      datalabels: {
+        font: {
+          size: 14,
+        },
+      },
     },
     scales: {
       y: {
-        display: false,
+        position: 'right',
         ticks: {
-          display: false,
+          stepSize: quarterOfMaxData,
         },
       },
       x: {
         position: 'bottom',
+        grid: {
+          display: false,
+        },
+        ticks: {
+          lineWidth: 0,
+          color: [
+            'rgb(52, 58, 64)',
+            'rgb(52, 58, 64)',
+            'rgb(52, 58, 64)',
+            'rgb(52, 58, 64)',
+            'rgb(52, 58, 64)',
+            'rgb(52, 58, 64)',
+            'rgb(52, 58, 64)',
+          ],
+        },
       },
     },
   };
+  // Change Today color
+  options.scales.x.ticks.color.splice(
+    props.dayOfWeek - 1,
+    1,
+    'rgb(245, 159, 0)',
+  );
   return (
     <div css={cssWrapper}>
       <Bar

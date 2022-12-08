@@ -146,7 +146,12 @@ const TestComponents: React.FC = () => {
           <RecordTitle text="録音テーマテキスト録音テーマテキスト録音テーマテキスト録音テーマテキスト" />
           <RecordArea />
           <IntonationResult level={1} levelText="Begginer" point={30} />
-          <WeeklyRecord currentNumber={753} goalOfWeek={100} />
+          <WeeklyRecord
+            currentNumber={753}
+            goalOfWeek={100}
+            totalTime={{ hour: 15, min: 30 }}
+            totalPhrases={4500}
+          />
         </div>
       </IonContent>
     </IonPage>

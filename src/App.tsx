@@ -63,7 +63,7 @@ export const theme = {
     tertiary0: '#EF8949',
     tertiary1: '#FFECD3',
     tertiary2: '#D87B69',
-    text0: '#333333',
+    text0: '#000000',
     text1: '#343A40',
     text2: '#979C9E',
     text3: '#666666',

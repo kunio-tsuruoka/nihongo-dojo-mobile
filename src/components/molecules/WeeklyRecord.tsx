@@ -1,11 +1,19 @@
 /** @jsxImportSource @emotion/react */
 import { css, useTheme } from '@emotion/react';
+import { rgba } from 'emotion-rgba';
+
 import { ImageIcon } from '../atoms/ImageIcon';
 import { RecordGraph } from './RecordGraph';
+import { Icon } from '../atoms/Icon';
 
 interface IProps {
   currentNumber: number;
   goalOfWeek: number;
+  totalTime: {
+    hour: number;
+    min: number;
+  };
+  totalPhrases: number;
 }
 
 export const WeeklyRecord: React.FC<IProps> = (props) => {
@@ -27,6 +35,7 @@ export const WeeklyRecord: React.FC<IProps> = (props) => {
     position: relative;
     background-color: #fff;
     padding: 16px 32px;
+    border-radius: 8px;
   `;
   const cssSlash = css`
     width: 1px;
@@ -63,7 +72,54 @@ export const WeeklyRecord: React.FC<IProps> = (props) => {
       border-radius: 4px;
       overflow: hidden;
       margin-left: 8px;
-      box-shadow: 1px 2px 3px rgba(#000, 0.15);
+      box-shadow: 1px 2px 3px ${rgba(theme.color.text1, 0.15)};
+    }
+  `;
+  const cssGraphArea = css`
+    margin-top: 45px;
+  `;
+  const cssOverview = css`
+    margin-top: 45px;
+    padding: 24px 24px 41px;
+    border-radius: 14px;
+    background-color: ${rgba(theme.color.bg0, 0.3)};
+  `;
+  const cssOverviewTitle = css`
+    margin: 0;
+    color: #fff;
+    text-align: center;
+    font-size: 20px;
+  `;
+  const cssOverviewInner = css`
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 15px;
+    margin-top: 16px;
+  `;
+
+  const cssOverviewBox = css`
+    padding: 12px 0;
+    width: 100%;
+    background-color: #fff;
+    border-radius: 8px;
+    text-align: center;
+  `;
+  const cssOverviewBoxTitle = css`
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 10px;
+    gap: 4px;
+    color: ${theme.color.primary0};
+    margin: 0;
+  `;
+  const cssOverviewBoxData = css`
+    margin-top: 6px;
+    margin-bottom: 0;
+    font-size: 20px;
+    span {
+      font-size: 12px;
     }
   `;
   return (
@@ -85,8 +141,31 @@ export const WeeklyRecord: React.FC<IProps> = (props) => {
           </span>
         </div>
       </div>
-      <div>
-        <RecordGraph />
+      <div css={cssGraphArea}>
+        <RecordGraph dayOfWeek={5} />
+      </div>
+      <div css={cssOverview}>
+        <h3 css={cssOverviewTitle}>Overview</h3>
+        <div css={cssOverviewInner}>
+          <div css={cssOverviewBox}>
+            <h5 css={cssOverviewBoxTitle}>
+              <Icon name={'time'} width={18} height={18} />
+              <span>total time</span>
+            </h5>
+            <p css={cssOverviewBoxData}>
+              {props.totalTime.hour}
+              <span>H</span> {props.totalTime.min}
+              <span>M</span>
+            </p>
+          </div>
+          <div css={cssOverviewBox}>
+            <h5 css={cssOverviewBoxTitle}>
+              <Icon name={'generic'} width={16} height={16} />
+              <span>total phrases</span>
+            </h5>
+            <p css={cssOverviewBoxData}>{props.totalPhrases}</p>
+          </div>
+        </div>
       </div>
     </div>
   );

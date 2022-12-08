@@ -13,7 +13,7 @@ interface IProps {
 export const HeaderNavigation: React.FC<IProps> = (props) => {
   const theme = useTheme();
   const cssTitle = css`
-    color: ${theme.color.text0};
+    color: ${theme.color.text1};
     font-size: 20px;
     font-weight: 600;
     margin: 0;
