@@ -28,6 +28,8 @@ import { HeaderNavigation } from '../components/molecules/HeaderNavigation';
 import { ButtleIllust } from '../components/molecules/ButtleIllust';
 import { IntonationResult } from '../components/molecules/IntonationResult';
 import { WeeklyRecord } from '../components/molecules/WeeklyRecord';
+import { SettingList } from '../components/molecules/SettingList';
+import { FormItem } from '../components/atoms/FormItem';
 import { Modal } from '../components/organisms/Modal';
 import './Tab1.css';
 
@@ -151,6 +153,33 @@ const TestComponents: React.FC = () => {
             goalOfWeek={100}
             totalTime={{ hour: 15, min: 30 }}
             totalPhrases={4500}
+          />
+          <SettingList />
+          <FormItem
+            inputType="input"
+            type="text"
+            label="Name"
+            name="name"
+            id="name"
+            required={true}
+            placeholder="placeholder"
+          />
+          <FormItem
+            inputType="input"
+            type="email"
+            label="E-mail"
+            name="mail"
+            id="mail"
+            required={true}
+            placeholder="placeholder"
+          />
+          <FormItem
+            inputType="textarea"
+            label="Message"
+            name="message"
+            id="message"
+            required={true}
+            placeholder=""
           />
         </div>
       </IonContent>
