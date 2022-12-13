@@ -7,6 +7,8 @@ import {
 } from '@ionic/react';
 import ExploreContainer from '../components/ExploreContainer';
 import { SampleComponent } from '../components/SampleComponent';
+import { Button } from '../components/atoms/Button';
+import { Navigation } from '../components/molecules/Navigation';
 import './Tab1.css';
 
 const Tab1: React.FC = () => {
